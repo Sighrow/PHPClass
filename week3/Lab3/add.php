@@ -29,7 +29,7 @@
         
         if ($confirm === true)
             {
-                $results = 'Data Added.';
+                $results = 'Data Added!';
             }
         else
             {
@@ -38,23 +38,23 @@
         }
         ?>
         
-        <h1>Corporation Database</h1>
-        <h2 style='font-size: 15px'><a href="add.php">Enter Data</a>&nbsp;&nbsp;<a href="view-all.php">View Data</a></h2>
+        <h1 style='padding-left: 30px'>Corporation Database</h1>
+        <h2 style='font-size: 15px' style='padding-left: 30px'><a style='padding-left: 30px' href="add.php">Enter Data</a>&nbsp;&nbsp;<a href="view-all.php">View Data</a><hr></h2>
         
-        <h1><?php echo $results; ?></h1>
+        <h2 style='padding-left: 29px'><?php echo $results; ?></h2>
 
         <form style='padding-left: 30px' method="post" action="#">
-            <b>Enter Corporation Information...</b>
+            <b>Enter Corporation Information:</b>
             <br><br>
-            Corporation Name: <input type="text" value="" name="corp" />
+            Corporation Name:<br><input type="text" value="" name="corp" />
             <br><br>
-            E-mail: <input type="text" value="" name="email" />
+            E-mail:<br><input type="text" value="" name="email" />
             <br><br>
-            Zip Code: <input type="text" value="" name="zipcode" />
+            Zip Code:<br><input type="text" value="" name="zipcode" />
             <br><br>
-            Owner: <input type="text" value="" name="owner" />
+            Owner:<br><input type="text" value="" name="owner" />
             <br><br>
-            Phone: <input type="text" value="" name="phone" />
+            Phone:<br><input type="text" value="" name="phone" />
             <br><br>
             <input type="submit" value="Submit" />
         </form>

@@ -28,7 +28,7 @@ and open the template in the editor.
          <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th style='padding-left: 30px'>ID</th>
                     <th>Corporation</th>
                     <th>Date</th>
                     <th>E-mail</th>
@@ -40,17 +40,19 @@ and open the template in the editor.
                 </tr>
             </thead>
       
-             <h1>Corporation Database</h1>
-             <h2 style='font-size: 15px'><a href="add.php">Enter Data</a>&nbsp;&nbsp;<a href="view-all.php">Previous</a></h2>
+        <h1 style='padding-left: 30px'>Corporation Database</h1>
+        <h2 style='font-size: 15px' style='padding-left: 30px'><a style='padding-left: 30px' href="add.php">Enter Data</a>&nbsp;&nbsp;<a href="view-all.php">Previous</a><hr></h2>
         
                 <tr>
-                    <td><?php echo $row['id']; ?></td>
+                    <td style='padding-left: 30px'><?php echo $row['id']; ?></td>
                     <td><?php echo $row['corp']; ?></td>
                     <td><?php echo date("F j, Y, g:i a",strtotime($row['incorp_dt'])); ?></td>                        
                     <td><?php echo $row['email']; ?></td>                        
                     <td><?php echo $row['zipcode']; ?></td>                        
                     <td><?php echo $row['owner']; ?></td>                        
-                    <td><?php echo $row['phone']; ?></td>                        
+                    <td><?php echo $row['phone']; ?></td>
+                    <td><a class="btn btn-success" href="update.php?id=<?php echo $row['id']; ?>">Update</a></td>            
+                    <td><a class="btn btn-danger" href="delete.php?id=<?php echo $row['id']; ?>">Delete</a></td>
                 </tr>
         </table>
     </body>

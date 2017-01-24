@@ -32,7 +32,7 @@ function viewOneFromCorps($id)
     return $results;
 }
 
-function createCorpsData($corp, $incorp_dt, $email, $zipcode, $owner, $phone)
+function createCorpsData($corp, $email, $zipcode, $owner, $phone)
 {
     $result = false;
     
@@ -56,6 +56,47 @@ function createCorpsData($corp, $incorp_dt, $email, $zipcode, $owner, $phone)
     return $result;
 }
 
+function deleteFromCorps($id)
+{
+    $isDeleted = false;
+    
+    $db = getDatabase();
+    $stmt = $db->prepare("DELETE FROM corps where id = :id");
+    
+    $binds = array(
+        ":id" => $id
+    );
+    
+    if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
+    $isDeleted = true;
+    } 
+    
+    return $isDeleted;
+}
+
 function isPostRequest() {
     return ( filter_input(INPUT_SERVER, 'REQUEST_METHOD') === 'POST' );
+}
+
+function updateCorpsRow($id, $corp, $email, $zipcode, $owner, $phone)
+{
+   $result = false;
+   
+   $db = getDatabase(); 
+   
+   $stmt = $db->prepare("UPDATE corps set corp = :corp, email = :email, zipcode = :zipcode, owner = :owner, phone = :phone where id = :id");
+                
+                $binds = array(
+                    ":id" => $id,
+                    ":corp" => $corp,
+                    ":email" => $email,
+                    ":zipcode" => $zipcode,
+                    ":owner" => $owner,
+                    ":phone" => $phone
+                );
+                
+                if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
+                   $result = true;
+                }
+    return $result;
 }
