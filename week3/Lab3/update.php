@@ -57,15 +57,15 @@
         <form style='padding-left: 30px' method="post" action="#">
             <b>Update Corporation Information:</b>
             <br><br>
-            Corporation Name:<br><input type="text" value="" name="corp" />
+            Corporation Name:<br><input type="text" value="<?php echo $corp ?>" name="corp" />
             <br><br>
-            E-mail:<br><input type="text" value="" name="email" />
+            E-mail:<br><input type="text" value="<?php echo $email ?>" name="email" />
             <br><br>
-            Zip Code:<br><input type="text" value="" name="zipcode" />
+            Zip Code:<br><input type="text" value="<?php echo $zipcode ?>" name="zipcode" />
             <br><br>
-            Owner:<br><input type="text" value="" name="owner" />
+            Owner:<br><input type="text" value="<?php echo $owner ?>" name="owner" />
             <br><br>
-            Phone:<br><input type="text" value="" name="phone" />
+            Phone:<br><input type="text" value="<?php echo $phone ?>" name="phone" />
             <br><br>
             <input type="hidden" value="<?php echo $id; ?>" name="id" /> 
             <input type="submit" value="Update" />
