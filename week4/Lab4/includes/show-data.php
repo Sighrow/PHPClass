@@ -22,9 +22,6 @@
                     <td><?php echo $row['zipcode']; ?></td>
                     <td><?php echo $row['owner']; ?></td>
                     <td><?php echo $row['phone']; ?></td>
-                    <td><a class="btn btn-success" href="update.php?id=<?php echo $row['id']; ?>">Update</a></td>            
-                    <td><a class="btn btn-warning" href="read.php?id=<?php echo $row['id']; ?>">Read</a></td> 
-                    <td><a class="btn btn-danger" href="delete.php?id=<?php echo $row['id']; ?>">Delete</a></td>
                 </tr> 
             <?php endforeach; ?>
         </table>

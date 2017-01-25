@@ -22,9 +22,26 @@ and open the template in the editor.
         
         $results = viewAllFromCorps();
       
-        ?>
+           $column = 'datatwo';
+           $action = filter_input(INPUT_POST, 'action');
+           $dataone = filter_input(INPUT_POST, 'dataone');
+           $datatwo = filter_input(INPUT_POST, 'datatwo');
+          
+            if ( $action === 'Submit1' ) 
+            {
+ 
+            }
+            if ( $action === 'Submit2' )
+            {
+                $results = searchTest($column, $dataone);
+            }
         
+        ?>
+  
         <?php include './includes/header.php'; ?>
+        <?php include './includes/form1.php'; ?>
+        <?php include './includes/form2.php'; ?>
+        <p style='padding-left: 30px'>Showing <?php echo count ($results);?> results:</p>
         <?php include './includes/show-data.php'; ?>
         
     </body>
