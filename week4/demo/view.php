@@ -15,6 +15,7 @@
            $column = 'datatwo';
            $action = filter_input(INPUT_POST, 'action');
            $dataone = filter_input(INPUT_POST, 'dataone');
+           $datatwo = filter_input(INPUT_POST, 'datatwo');
           
             if ( $action === 'Submit1' ) 
             {
