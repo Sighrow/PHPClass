@@ -1,5 +1,8 @@
 <?php if(is_array($results) && is_array($results) && count($results) > 0): ?>
- <table class="table table-striped">
+<hr>
+<p style='padding-left: 30px'>Showing <?php echo count ($results);?> results:</p>
+
+<table class="table table-striped">
             <thead>
                 <tr>
                     <th style='padding-left: 30px'>ID</th>
@@ -17,7 +20,7 @@
                 <tr>
                     <td style='padding-left: 30px'><?php echo $row['id']; ?></td>
                     <td><?php echo $row['corp']; ?></td>
-                    <td><?php echo $row['incorp_dt']; ?></td>
+                    <td><?php echo date("d/m/Y -- g:i a",strtotime($row['incorp_dt'])); ?></td>
                     <td><?php echo $row['email']; ?></td>
                     <td><?php echo $row['zipcode']; ?></td>
                     <td><?php echo $row['owner']; ?></td>

@@ -41,7 +41,6 @@ and open the template in the editor.
         <?php include './includes/header.php'; ?>
         <?php include './includes/form1.php'; ?>
         <?php include './includes/form2.php'; ?>
-        <p style='padding-left: 30px'>Showing <?php echo count ($results);?> results:</p>
         <?php include './includes/show-data.php'; ?>
         
     </body>
