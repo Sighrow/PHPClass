@@ -1,8 +1,8 @@
 <form action="#" method="get">
     <fieldset>
-        <legend>Order:</legend>
+        <legend style="padding-left: 30px;">Order:</legend>
         
-        <label>ASC</label>  
+        <label style="padding-left: 30px;">ASC</label>  
         <input type="radio" name="order" value="ASC" 
         <?php if ($order === "ASC"): ?>
             checked="checked"

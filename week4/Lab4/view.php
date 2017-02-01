@@ -35,7 +35,7 @@
         ?>
         
         <div><?php include './includes/header.php'; ?></div>
-        <div style="padding-left: 30px">
+        <div>
         <div style="float: left"><?php include './includes/form1.php'; ?></div>
         <div><?php include './includes/form2.php'; ?></div>
         </div>
