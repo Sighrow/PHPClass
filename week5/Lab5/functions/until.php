@@ -72,7 +72,8 @@ function registerSite($site, $siteLinks)
                             $binds = array(":site_id" => $site_id, ":link" => $link);
                             $stmt->execute($binds);
                         }
+                        return true;
                     }
     
-    return results;
+    return false;
 }

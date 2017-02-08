@@ -28,7 +28,7 @@ and open the template in the editor.
             {
                 $errors[] = "Site URL is not valid.";
             }
-             if ( count($errors) === 0)
+            if ( count($errors) === 0)
             {
                 $html = getPageContent($site);
                 
@@ -38,6 +38,14 @@ and open the template in the editor.
                     
                     $results = registerSite($site, $siteLinks);
                     
+                    if ($results === true)
+                    {
+                        $message = "Site registered successfully.";
+                    }
+                    else
+                    {
+                        $errors[] = "Site not registered.";
+                    }
                 }
             }
         }
