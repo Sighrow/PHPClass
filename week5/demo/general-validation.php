@@ -7,24 +7,28 @@
     <body>
         <?php
         // put your code here
-            
+        
+        include './functions/until.php';
+        
         $fullname = filter_input(INPUT_POST, 'fullname');
         $dob = filter_input(INPUT_POST, 'dob');
         
         $errors = array();
         
-        if ( empty($fullname) ) {
-            $errors[] = 'Fullname is not valid';
+        if (isPostRequest())
+        {
+            if ( empty($fullname) ) {
+                $errors[] = 'Fullname is not valid';
+            }
+
+            if ( empty($dob) ) {
+                $errors[] = 'Date of birth is not valid';
+            }
+
+            if ( count($errors) === 0) {
+                //save data
+            }
         }
-        
-        if ( empty($dob) ) {
-            $errors[] = 'Date of birth is not valid';
-        }
-        
-        if ( count($errors) === 0) {
-            //save data
-        }
-        
         
         ?>
        
