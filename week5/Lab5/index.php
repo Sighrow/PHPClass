@@ -30,7 +30,15 @@ and open the template in the editor.
             }
              if ( count($errors) === 0)
             {
-                $output = getPageContent($site);
+                $html = getPageContent($site);
+                
+                if (!empty($html))
+                {
+                    $siteLinks = getLinkMatches($html);
+                    
+                    $results = registerSite($site, $siteLinks);
+                    
+                }
             }
         }
         ?>

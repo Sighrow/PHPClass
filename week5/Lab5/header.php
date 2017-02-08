@@ -13,7 +13,7 @@
         <h1 style="padding-left: 28px;">Site Registration</h1>
         <hr>
         <h3 style="padding-left: 30px; font-size: 15px;">
-            <a class="btn btn-default btn-sm" href="registerURL.php">Register Site</a>
+            <a class="btn btn-default btn-sm" href="index.php">Register Site</a>
             <a class="btn btn-default btn-sm" href="URLlookup.php">Lookup Site</a>
         </h3>
         <hr>
