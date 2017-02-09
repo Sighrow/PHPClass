@@ -21,12 +21,13 @@ and open the template in the editor.
         
         $site = filter_input(INPUT_POST, 'site');
         $errors = array();
+        $message = "";
         
         if (isPostRequest())
         {
             if ( filter_var($site, FILTER_VALIDATE_URL) === false  )
             {
-                $errors[] = "Site URL is not valid.";
+                $errors[] = "Invalid web address.";
             }
             if ( count($errors) === 0)
             {
@@ -40,7 +41,7 @@ and open the template in the editor.
                     
                     if ($results === true)
                     {
-                        $message = "Site registered successfully.";
+                        $message = " <img src='./successicon.png' alt='success' /> Site registered successfully!";
                     }
                     else
                     {
@@ -51,13 +52,13 @@ and open the template in the editor.
         }
         ?>
         
-        <?php include "./templates/error-messages.php"; ?>
         <?php include "./header.php"; ?>
+        <?php include "./templates/error-messages.php"; ?>
         
         <form action="#" method="post">
         <label style="padding-left: 29px">Enter Web Address:</label><br>
         <input name="site" type="text" placeholder="http://"
-               style="width: 400px; margin-left: 30px;" value="http://"/><br><br>
+               style="width: 400px; margin-left: 30px;" value="http://"/><?php echo $message; ?><br><br>
         <input class="btn btn-default btn-xs" style="width: 198px; margin-left: 30px" type="submit" value="Register" />
         <input class="btn btn-default btn-xs" style="width: 198px;" type="reset" value="Reset"/><hr>
     </form>   
