@@ -41,7 +41,7 @@ and open the template in the editor.
                     
                     if ($results === true)
                     {
-                        $message = " <img src='./successicon.png' alt='success' /> Site registered successfully!";
+                        $message = " <img src='./images/successicon.png' alt='success' /> Site registered successfully!";
                     }
                     else
                     {
@@ -54,7 +54,7 @@ and open the template in the editor.
         
         <?php include "./header.php"; ?>
         <?php include "./templates/error-messages.php"; ?>
-        
+     
         <form action="#" method="post">
         <label style="padding-left: 29px">Enter Web Address:</label><br>
         <input name="site" type="text" placeholder="http://"
