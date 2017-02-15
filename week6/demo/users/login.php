@@ -11,7 +11,22 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        // put your code here
+        
+        include './functions/dbconnect.php';
+        include './functions/until.php';
+        include './functions/users.php';
+        
+        if (isPostRequest()){
+            $email = filter_input(INPUT_POST, 'email');
+            $password = filter_input(INPUT_POST, 'pass');
+            
+            $result = login($email, $password);
+            
+            if ($result != 0){
+                $_SESSION['userid'] = $result;
+            }
+        }
+        
         ?>
         
         <h1> Login </h1>
