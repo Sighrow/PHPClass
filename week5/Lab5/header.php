@@ -14,7 +14,7 @@
         <hr>
         <h3 style="padding-left: 30px; font-size: 15px;">
             <a class="btn btn-default btn-sm" href="index.php">Register Site</a>
-            <a class="btn btn-default btn-sm" href="URLlookup.php">Lookup Site</a>
+            <a class="btn btn-default btn-sm" href="lookup.php">Look-up Site</a>
         </h3>
         <hr>
         

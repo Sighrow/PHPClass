@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Site Registration</title>
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
         <!-- Optional theme -->
@@ -61,7 +61,7 @@ and open the template in the editor.
                style="width: 400px; margin-left: 30px;" value="http://"/><?php echo $message; ?><br><br>
         <input class="btn btn-default btn-xs" style="width: 198px; margin-left: 30px" type="submit" value="Register" />
         <input class="btn btn-default btn-xs" style="width: 198px;" type="reset" value="Reset"/><hr>
-    </form>   
+    </form>
         
     </body>
 </html>
