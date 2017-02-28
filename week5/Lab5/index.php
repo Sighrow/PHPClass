@@ -62,6 +62,26 @@ and open the template in the editor.
         <input class="btn btn-default btn-xs" style="width: 198px; margin-left: 30px" type="submit" value="Register" />
         <input class="btn btn-default btn-xs" style="width: 198px;" type="reset" value="Reset"/><hr>
     </form>
+    <?php   
+        if (isPostRequest())
+        {
+                if (!empty($html))
+                {
+                    $siteLinks = getLinkMatches($html);
+                    
+                    $results = registerSite($site, $siteLinks);
+                    
+                    if ($results === true)
+                    {
+                        
+                    }
+                    else
+                    {
+                        $errors[] = "Site not registered.";
+                    }
+                }
+            }
         
+    ?>    
     </body>
 </html>
