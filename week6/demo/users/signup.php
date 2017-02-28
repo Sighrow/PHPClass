@@ -11,6 +11,9 @@ and open the template in the editor.
     </head>
     <body>
         <?php
+        
+        session_start();
+        
         include './functions/dbconnect.php';
         include './functions/until.php';
         include './functions/users.php';
