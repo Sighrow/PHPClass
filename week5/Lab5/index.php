@@ -73,7 +73,8 @@ and open the template in the editor.
                     
                     if ($results === true)
                     {
-                        
+                        echo "<h3 style='padding-left: 30px;'> Added site:</h3>"; echo "<p style='padding-left: 30px;'>$site;</p>";
+                        echo '<pre>'; print_r($siteLinks); echo '</pre>';
                     }
                     else
                     {
