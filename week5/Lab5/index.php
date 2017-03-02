@@ -21,11 +21,16 @@ and open the template in the editor.
         $site = filter_input(INPUT_POST, 'site');
         $errors = array();
         $message = "";
+        $checkExists = siteExists($site);
 
         if (isPostRequest()) {
             if (filter_var($site, FILTER_VALIDATE_URL) === false) {
                 $errors[] = "Invalid web address.";
             }
+            if ($checkExists === true) {
+                $errors[] = "Site already exists.";
+            }
+            
             if (count($errors) === 0) {
                 $html = getPageContent($site);
 
