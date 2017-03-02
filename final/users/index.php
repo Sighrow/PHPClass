@@ -18,6 +18,8 @@ and open the template in the editor.
         <?php
         include './header.php';
         include './login.php';
+        include './signup.php';
         ?>
+        
     </body>
 </html>

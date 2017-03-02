@@ -32,6 +32,6 @@ and open the template in the editor.
         <h1 style="padding-left: 15px;"> Login </h1>
         
         <?php include './templates/users-form.html.php'; ?>
-        
+        </div>
     </body>
 </html>
