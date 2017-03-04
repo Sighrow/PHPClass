@@ -11,6 +11,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
+        session_start();
         
         include './functions/dbconnect.php';
         include './functions/until.php';
@@ -24,14 +25,18 @@ and open the template in the editor.
             
             if ($result != 0){
                 $_SESSION['userid'] = $result;
+                $_SESSION['loggedin'] = true;
+                header('location: http://localhost/PHPClass/final/access/admin.php');
             }
         }
         
         ?>
+        <?php include './header.php';?>
         
         <h1 style="padding-left: 15px;"> Login </h1>
-        
+       
         <?php include './templates/users-form.html.php'; ?>
+       
         </div>
     </body>
 </html>
