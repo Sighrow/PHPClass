@@ -22,8 +22,8 @@ and open the template in the editor.
         <div style="float: left;"><img src="images/cartbanner.png" alt="Cart"></img></div><div style="margin-top: -20px; width: 100%; height:100px; background-color: #362e5f; color: white;"><h1 style="padding-top: 30px; padding-left: 30px;">Shopping Cart</h1></div>
         
         <div style="padding: 15px; border-bottom: 3px solid #362e5f; background-color: #ededed; float: left; width: 100%;">
-            <a class="btn btn-default btn-sm" href="index.php">Register Site</a>
-            <a class="btn btn-default btn-sm" href="lookup.php">Look-up Site</a>
+            <a class="btn btn-default btn-sm" href="admin.php">Admin</a>
+            <a class="btn btn-default btn-sm" href="lookup.php">Shopping Cart</a>
             
             <?php  
 
@@ -36,7 +36,7 @@ and open the template in the editor.
             if ( isset($_SESSION['loggedin']) &&
                     $_SESSION['loggedin'] === true ) {
                echo $_SESSION['userid'];
-               echo '<div style="text-align: right; float: right;"><a href="?logout=1">Logout</a></div>';
+               echo '<div style="text-align: right; float: right;"><a class="btn btn-default btn-sm" href="?logout=1">Logout</a></div>';
             } ?>
 
         </div>

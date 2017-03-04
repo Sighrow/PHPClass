@@ -22,8 +22,16 @@ and open the template in the editor.
         <div style="float: left;"><img src="images/cartbanner.png" alt="Cart"></img></div><div style="margin-top: -20px; width: 100%; height:100px; background-color: #362e5f; color: white;"><h1 style="padding-top: 30px; padding-left: 30px;">Shopping Cart</h1></div>
         
         <div style="padding: 15px; border-bottom: 3px solid #362e5f; background-color: #ededed;">
-            <a class="btn btn-default btn-sm" href="index.php">Register Site</a>
-            <a class="btn btn-default btn-sm" href="lookup.php">Look-up Site</a>
+            
+            <?php $loc = $_SERVER['REQUEST_URI'] ?>
+            <?php if ($loc === "/PHPClass/final/users/login.php"){?>
+            <a class="btn btn-default btn-sm" href="signup.php">Sign-up</a>
+            <?php } ?>
+            
+            <?php if ($loc === "/PHPClass/final/users/signup.php"){?>
+            <a class="btn btn-default btn-sm" href="login.php">Login</a>
+            <?php } ?>
+            
         </div>
     </body>
 </html>

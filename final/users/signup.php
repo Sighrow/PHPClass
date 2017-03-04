@@ -46,8 +46,9 @@ and open the template in the editor.
         
         ?>
         
+        <?php include './header.php';?>
         
-        <h1> Sign Up </h1>
+        <h1 style="padding-left: 15px;"> Sign Up </h1>
         
         <?php include './templates/error-messages.html.php'; ?>
         <?php include './templates/users-form.html.php'; ?>
