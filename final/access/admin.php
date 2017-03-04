@@ -13,7 +13,8 @@
         include_once './functions.php';
         
         if ( !isLoggedIn() ) {
-            die('Access not allowed');
+            die(header('location: http://localhost/PHPClass/final/users/login.php'));
+            
         }
         
         
