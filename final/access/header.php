@@ -32,7 +32,11 @@ and open the template in the editor.
 
             if ( isset($_SESSION['loggedin']) &&
                     $_SESSION['loggedin'] === true ) {
-               echo '<div style="text-align: right; float: right;"><a class="btn btn-default btn-sm" href="?logout=1">Logout</a></div>';
+                
+               echo '<div style="text-align: right; float: right;">'
+                  . 'Hello, <b>'?><?php echo $_SESSION['username'];?><?php echo '!</b>'
+                  . '<a class="btn btn-default btn-sm" style="margin-left: 10px;" href="?logout=1">Logout</a>'
+                  . '</div>';
             } ?>
 
         </div>
