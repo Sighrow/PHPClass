@@ -20,7 +20,6 @@ if(is_array($resultsCategories) && is_array($resultsCategories) && count($result
                     <td style='padding-left: 15px'><?php echo $row['category_id']; ?></td>
                     <td><?php echo $row['category']; ?></td>
                     <td><a class="btn btn-success" href="update.php?id=<?php echo $row['category_id']; ?>">Update</a></td>            
-                    <td><a class="btn btn-warning" href="read.php?id=<?php echo $row['category_id']; ?>">Read</a></td> 
                     <td><a class="btn btn-danger" href="delete.php?id=<?php echo $row['category_id']; ?>">Delete</a></td>
                 </tr> 
             <?php endforeach; ?>

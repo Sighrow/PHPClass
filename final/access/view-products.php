@@ -24,9 +24,8 @@ if(is_array($resultsProducts) && is_array($resultsProducts) && count($resultsPro
                     <td><?php echo $row['product']; ?></td>
                     <td><?php echo $row['price']; ?></td>
                     
-                    <td><a class="btn btn-success" href="update.php?id=<?php echo $row['product_id']; ?>">Update</a></td>            
-                    <td><a class="btn btn-warning" href="read.php?id=<?php echo $row['product_id']; ?>">Read</a></td> 
-                    <td><a class="btn btn-danger" href="delete.php?id=<?php echo $row['product_id']; ?>">Delete</a></td>
+                    <td><a class="btn btn-default" href="update.php?id=<?php echo $row['product_id']; ?>">Update</a></td>            
+                    <td><a class="btn btn-default" href="delete.php?id=<?php echo $row['product_id']; ?>">Delete</a></td>
                 </tr> 
             <?php endforeach; ?>
         </table>
