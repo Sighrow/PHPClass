@@ -20,7 +20,7 @@ and open the template in the editor.
         
         <div style="padding: 15px; border-bottom: 3px solid #362e5f; background-color: #ededed; float: left; width: 100%;">
             <a class="btn btn-default btn-sm" href="admin.php">Admin Panel</a>
-            <a class="btn btn-default btn-sm" href="lookup.php">Shopping Cart</a>
+            <a class="btn btn-default btn-sm" href="shoppingcart/index.php">Shopping Cart</a>
             
             <?php  
 
