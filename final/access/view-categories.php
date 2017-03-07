@@ -4,6 +4,7 @@ if(is_array($resultsCategories) && is_array($resultsCategories) && count($result
 <hr>
 <div style="width: 100%; float: left; margin-top: 15px;"><p style='padding-left: 15px'>Showing: <b><?php echo count ($resultsCategories);?> results</b></p><div></div> <?php }
 ?>
+    <div><a class="btn btn-default btn-sm" href="add-category.php">Add</a></div>
 
 <table class="table table-striped">
             <thead>
@@ -19,8 +20,8 @@ if(is_array($resultsCategories) && is_array($resultsCategories) && count($result
                 <tr>
                     <td style='padding-left: 15px'><?php echo $row['category_id']; ?></td>
                     <td><?php echo $row['category']; ?></td>
-                    <td><a class="btn btn-success" href="update.php?id=<?php echo $row['category_id']; ?>">Update</a></td>            
-                    <td><a class="btn btn-danger" href="delete.php?id=<?php echo $row['category_id']; ?>">Delete</a></td>
+                    <td><a class="btn btn-default" href="update-category.php?category_id=<?php echo $row['category_id']; ?>">Update</a></td>            
+                    <td><a class="btn btn-default" href="delete-category.php?category_id=<?php echo $row['category_id']; ?>">Delete</a></td>
                 </tr> 
             <?php endforeach; ?>
         </table>

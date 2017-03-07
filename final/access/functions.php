@@ -24,6 +24,10 @@ function dbconnect() {
     return $db;
 }
 
+function isPostRequest() {
+    return ( filter_input(INPUT_SERVER, 'REQUEST_METHOD') === 'POST' );
+}
+
 function isLoggedIn() {
     
     if ( !isset($_SESSION['loggedin']) || $_SESSION['loggedin'] === false 
@@ -56,6 +60,80 @@ function viewProducts()
       $results = array();
         if ($stmt->execute() && $stmt->rowCount() > 0) {
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+        
+    return $results;
+}
+
+function createCategoryData($category)
+{
+    $result = false;
+    
+    $db = dbconnect();
+    
+    $stmt = $db->prepare("INSERT INTO categories SET category = :category");
+    
+    $binds = array(
+                ":category" => $category,
+            );
+    
+    if ($stmt->execute($binds) && $stmt->rowCount() > 0) 
+            {
+                $result = true;
+            }
+    
+    return $result;
+}
+
+function deleteFromCategories($category_id)
+{
+    $isDeleted = false;
+    
+    $db = dbconnect();
+    $stmt = $db->prepare("DELETE FROM categories WHERE category_id = :category_id");
+    
+    $binds = array(
+        ":category_id" => $category_id
+    );
+    
+    if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
+    $isDeleted = true;
+    } 
+    
+    return $isDeleted;
+}
+
+function updateCategoriesRow($category_id, $category)
+{
+   $result = false;
+   
+   $db = dbconnect(); 
+   
+   $stmt = $db->prepare("UPDATE categories SET category = :category");
+                
+                $binds = array(
+                    ":category" => $category,
+                );
+                
+                if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
+                   $result = true;
+                }
+    return $result;
+}
+
+function viewOneFromCategories($category_id)
+{
+    $db = dbconnect();
+    
+    $stmt = $db->prepare("SELECT * FROM categories where category_id = :category_id");
+    
+    $binds = array(
+            ":category_id" => $category_id
+    );
+    
+      $results = array();
+        if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
+            $results = $stmt->fetch(PDO::FETCH_ASSOC);
         }
         
     return $results;
