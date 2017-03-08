@@ -42,6 +42,7 @@
                 
                 $row = viewOneFromProducts($product_id);
                 $product = $row['product'];
+                $price = $row['price'];
             }
         
         ?>
@@ -51,6 +52,8 @@
             <b>Update Product:</b>
             <br><br>
             <input type="text" value="<?php echo $product ?>" name="product" />
+            <br>
+            <input type="text" value="<?php echo $price ?>" name="price" />
             <input type="hidden" value="<?php echo $product_id; ?>" name="product_id" /> 
             <input class="btn btn-default btn-sm" type="submit" value="Update" /> <a class="btn btn-default btn-sm" href="./admin.php?action=Products#">Cancel</a> <b><?php echo $result ?></b>
         </form>
