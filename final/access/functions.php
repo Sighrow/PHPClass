@@ -41,7 +41,7 @@ function viewCategories()
 {
     $db = dbconnect();
     
-    $stmt = $db->prepare("SELECT * FROM categories");
+    $stmt = $db->prepare("SELECT * FROM categories ORDER BY category_id");
     
       $results = array();
         if ($stmt->execute() && $stmt->rowCount() > 0) {

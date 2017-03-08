@@ -14,7 +14,7 @@
                     $fileName = uploadImage('newimage');       
                     
                 } catch (RuntimeException $e) {
-                    $fileName = filter_input(INPUT_POST, 'oldimage');
+                    $fileName = filter_input(INPUT_POST, 'oldimage');//upload only
                 }
                 echo '<p>Image ' . $fileName . ' Uploaded</p>';
             }
