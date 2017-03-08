@@ -140,10 +140,9 @@ function viewOneFromCategories($category_id)
     return $results;
 }
 
-function createProductData($product, $price)
+function createProductData($product, $price, $image)
 {
     $result = false;
-    $image = 'image.png';
     $category_id = 1;
     
     $db = dbconnect();

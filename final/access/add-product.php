@@ -16,18 +16,35 @@
         include './functions.php';
         $results = '';
 
-        if (isPostRequest()) 
-        {
-        
         $product = filter_input(INPUT_POST, 'product');
         $price = filter_input(INPUT_POST, 'price');
         
-        $confirm = createProductData($product, $price);
+        
+        
+         include './uploading/upload-function.php';
+            
+            if (count($_FILES)){
+                
+                try{ 
+                    $fileName = uploadImage('image');       
+                    
+                } catch (RuntimeException $e) {
+                    $fileName = filter_input(INPUT_POST, 'oldimage');//upload only
+                }
+                echo '<p>Image ' . $fileName . ' Uploaded</p>';
+            }
+        
+        if (isPostRequest()) 
+        {
+        
+        $image = $fileName;
+        
+        $confirm = createProductData($product, $price, $image);
         
         if ($confirm === true)
             {
                 $results = 'Data Added!';
-                header('location: ./admin.php?action=Products#');
+                //header('location: ./admin.php?action=Products#');
             }
         else
             {
@@ -39,14 +56,14 @@
         <h2 style='padding-left: 29px'><?php echo $results; ?></h2>
 
         <div style='margin-top: 20px; float: left;'>    
-        <form style='padding-left: 30px' method="post" action="#">
+        <form enctype="multipart/form-data" style='padding-left: 30px' method="post" action="#">
             <b>New Product:</b>
             <br><br>
             Product Name:<br><input type="text" value="" name="product" />
             <br><br>
             Price:<br><input type="text" value="" name="price" />
             <br><br>
-            
+            <?php include './uploading/upload-form.php' ?>
             <input class="btn btn-default btn-sm" type="submit" value="Create" /> <a class="btn btn-default btn-sm" href="./admin.php?action=Products#">Cancel</a> <b><?php echo $results ?></b>
         </form>
         </div>

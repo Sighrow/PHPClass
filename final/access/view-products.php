@@ -8,6 +8,7 @@ if(is_array($resultsProducts) && is_array($resultsProducts) && count($resultsPro
             <thead>
                 <tr>
                     <th style='padding-left: 15px'>Image</th>
+                    <th></th>
                     <th>Product ID</th>
                     <th>Name</th>
                     <th>Price</th>
@@ -18,7 +19,8 @@ if(is_array($resultsProducts) && is_array($resultsProducts) && count($resultsPro
 
             <?php foreach ($resultsProducts as $row): ?>
                 <tr>
-                    <td style='padding-left: 15px'><?php echo $row['image']; ?></td>
+                    <td style='padding-left: 15px; width: 100px; height: 100px;'><img style="width: 100px; height: 100px;" src="./uploads/<?php echo $row['image']; ?>"></img></td>
+                    <td></td>
                     <td><?php echo $row['product_id']; ?></td>
                     <td><?php echo $row['product']; ?></td>
                     <td><?php echo $row['price']; ?></td>
