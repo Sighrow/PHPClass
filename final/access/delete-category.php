@@ -18,13 +18,9 @@
             $isDeleted = deleteFromCategories($category_id);
         
         ?>
-        <h2 style='padding-left: 30px'> Category <?php echo $category_id ?>
-         <?php if ( !$isDeleted ): ?> 
-          Not
-        <?php endif; ?>
-        Deleted</h2>
+
         
-        <a href='<?php header('location: ./admin.php?action=Categories#'); ?>'>Back</a>
+        <a href='<?php header('location: ./admin.php?action=Categories#'); ?>'></a>
         
     </body>
 </html>

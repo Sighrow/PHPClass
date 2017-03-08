@@ -11,7 +11,10 @@
     </head>
     <body>
         <?php
-       
+            
+            session_start();
+
+            include_once './header.php';
             include './functions.php';
             
             $db = dbconnect();
@@ -23,9 +26,10 @@
                 
                 $updated = updateCategoriesRow($category_id, $category);
                 if ($updated){
-                    $result = 'Category updated';
+                    $result = 'Category updated.';
+                    header('location: ./admin.php?action=Categories#');
                 } else {
-                    $result = 'Category not updated';
+                    $result = 'Category not updated!';
                 }
             } else {
                 $category_id = filter_input(INPUT_GET, 'category_id');
@@ -40,16 +44,17 @@
             }
         
         ?>
-        
-        <h2 style='padding-left: 29px'><?php echo $result; ?></h2>
-                   
+   
+        <div style='margin-top: 20px; float: left;'>    
         <form style='padding-left: 30px' method="post" action="#">
             <b>Update Category:</b>
             <br><br>
-            Category:<br><input type="text" value="<?php echo $category ?>" name="category" />
+            <input type="text" value="<?php echo $category ?>" name="category" />
             <input type="hidden" value="<?php echo $category_id; ?>" name="category_id" /> 
-            <input type="submit" value="Update" />
+            <input class="btn btn-default btn-sm" type="submit" value="Update" /> <a class="btn btn-default btn-sm" href="./admin.php?action=Categories#')?>">Cancel</a> <b><?php echo $result; ?></b>
         </form>
+            
+        </div>
         
     </body>
 </html>
