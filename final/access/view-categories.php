@@ -10,10 +10,10 @@ if(is_array($resultsCategories) && is_array($resultsCategories) && count($result
 <table class="table table-striped">
             <thead>
                 <tr>
-                    <th style='padding-left: 15px'>ID</th>
-                    <th>Category</th>
+                    <th style='padding-left: 15px; width: 30%;'>Category ID</th>
+                    <th>Name</th>
                     <th></th>
-                    <th></th>
+                    <th style='width: 50%px;'></th>
                 </tr>
             </thead>
 
@@ -21,8 +21,8 @@ if(is_array($resultsCategories) && is_array($resultsCategories) && count($result
                 <tr>
                     <td style='padding-left: 15px'><?php echo $row['category_id']; ?></td>
                     <td><?php echo $row['category']; ?></td>
-                    <td><a class="btn btn-default" href="update-category.php?category_id=<?php echo $row['category_id']; ?>">Update</a></td>            
-                    <td><a class="btn btn-default" href="delete-category.php?category_id=<?php echo $row['category_id']; ?>">Delete</a></td>
+                    <td style='width: 10%;'><a class="btn btn-default" href="update-category.php?category_id=<?php echo $row['category_id']; ?>">Update</a></td>            
+                    <td style='width: 10%;'><a class="btn btn-default" href="delete-category.php?category_id=<?php echo $row['category_id']; ?>">Delete</a></td>
                 </tr> 
             <?php endforeach; ?>
         </table>

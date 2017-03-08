@@ -44,7 +44,7 @@
         if ($confirm === true)
             {
                 $results = 'Data Added!';
-                //header('location: ./admin.php?action=Products#');
+                header('location: ./admin.php?action=Products#');
             }
         else
             {
