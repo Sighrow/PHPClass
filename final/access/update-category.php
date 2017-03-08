@@ -51,7 +51,7 @@
             <br><br>
             <input type="text" value="<?php echo $category ?>" name="category" />
             <input type="hidden" value="<?php echo $category_id; ?>" name="category_id" /> 
-            <input class="btn btn-default btn-sm" type="submit" value="Update" /> <a class="btn btn-default btn-sm" href="./admin.php?action=Categories#')?>">Cancel</a> <b><?php echo $result; ?></b>
+            <input class="btn btn-default btn-sm" type="submit" value="Update" /> <a class="btn btn-default btn-sm" href="./admin.php?action=Categories#">Cancel</a> <b><?php echo $result ?></b>
         </form>
             
         </div>
