@@ -40,13 +40,13 @@ function getItems() {
 
 function getCategories() {
     return array(
-        array(  'id' => '1',
+        array(  'category_id' => '1',
                 'category' => 'books'
             ),
-        array(  'id' => '2',
+        array(  'category_id' => '2',
                 'category' => 'Sports'
             ),
-        array(  'id' => '3',
+        array(  'category_id' => '3',
                 'category' => 'music'
             )
     );

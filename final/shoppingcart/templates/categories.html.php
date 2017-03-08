@@ -3,7 +3,7 @@
     <li><a href="?">All</a> </li>    
     <?php foreach ($allCategories as $category): ?>
         <li>
-            <a href="?cat=<?php echo $category['id']; ?>">
+            <a href="?cat=<?php echo $category['category_id']; ?>">
                 <?php echo $category['category']; ?>
             </a>
         </li>    
