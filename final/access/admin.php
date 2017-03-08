@@ -30,15 +30,15 @@
         
         <?php
         
-         if ( $action === 'Categories' ) 
+         if( $action === 'Categories' ) 
             {
                 include './view-categories.php';
             }
-         else if( $action === 'Products' )
+         if( $action === 'Products' )
             {
                 include './view-products.php';
             }
-         else
+         if( !$action )
          {
              ?><div style="float: left; width: 100%;"><h2 style="padding: 13px;">Please select which data to edit. </h2><hr></div><?php
          }
