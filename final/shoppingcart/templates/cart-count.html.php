@@ -1,1 +1,0 @@
-<p>Your shopping cart contains <?php echo $cartCount; ?> items.</p>
