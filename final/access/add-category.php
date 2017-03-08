@@ -12,7 +12,6 @@
     <body>
         <?php
         
-        include './functions.php';
         $results = '';
 
         if (isPostRequest()) 
@@ -26,6 +25,7 @@
         if ($confirm === true)
             {
                 $results = 'Category added!';
+                header('location: ./admin.php?action=Categories#');
             }
         else
             {
@@ -33,14 +33,10 @@
             }
         }
         ?>
-    
-        <h2 style='padding-left: 29px'><?php echo $results; ?></h2>
 
         <form style='padding-left: 30px' method="post" action="#">
-            <b>Enter new category:</b>
-            <br><br>
-            Category:<br><input type="text" value="" name="category" />
-            <input type="submit" value="Add" />
+            <?php echo $results?> <input type="text" value="" name="category" />
+            <input class="btn btn-default btn-sm" style="height: 28px; margin-top: -3px;" type="submit" value="Add" />
         </form>
     </body>
 </html>

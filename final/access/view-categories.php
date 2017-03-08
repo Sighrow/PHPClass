@@ -2,9 +2,10 @@
 
 if(is_array($resultsCategories) && is_array($resultsCategories) && count($resultsCategories) > 0){ ?>
 <hr>
-<div style="width: 100%; float: left; margin-top: 15px;"><p style='padding-left: 15px'>Showing: <b><?php echo count ($resultsCategories);?> results</b></p><div></div> <?php }
+<div style="width: 100%; float: left; margin-top: 15px;"><div style="float: left;"><p style='padding-left: 15px'>Showing: <b><?php echo count ($resultsCategories);?> results</b></p></div><div style="float: right; margin-right: 15px;"><?php include './add-category.php'; ?></div></div> <?php }
 ?>
-    <div><a class="btn btn-default btn-sm" href="add-category.php">Add</a></div>
+    
+    
 
 <table class="table table-striped">
             <thead>

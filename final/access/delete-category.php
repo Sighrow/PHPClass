@@ -24,7 +24,7 @@
         <?php endif; ?>
         Deleted</h2>
         
-        
+        <a href='<?php header('location: ./admin.php?action=Categories#'); ?>'>Back</a>
         
     </body>
 </html>
