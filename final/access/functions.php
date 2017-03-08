@@ -139,3 +139,88 @@ function viewOneFromCategories($category_id)
         
     return $results;
 }
+
+function createProductData($product, $price)
+{
+    $result = false;
+    $image = 'image.png';
+    $category_id = 1;
+    
+    $db = dbconnect();
+    
+    $stmt = $db->prepare("INSERT INTO products SET product = :product, price = :price, category_id = :category_id, image = :image");
+    
+    $binds = array(
+                ":product" => $product,
+                ":price" => $price,
+                ":category_id" => $category_id,
+                ":image" => $image
+            );
+    
+    if ($stmt->execute($binds) && $stmt->rowCount() > 0) 
+            {
+                $result = true;
+            }
+    
+    return $result;
+}
+
+function deleteFromProducts($product_id)
+{
+    $isDeleted = false;
+    
+    $db = dbconnect();
+    $stmt = $db->prepare("DELETE FROM products WHERE product_id = :product_id");
+    
+    $binds = array(
+        ":product_id" => $product_id
+    );
+    
+    if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
+    $isDeleted = true;
+    } 
+    
+    return $isDeleted;
+}
+
+function updateProductsRow($product_id, $product, $price)
+{
+   $result = false;
+   $image = 'image.png';
+   $category_id = 1;
+    
+   $db = dbconnect(); 
+   
+   $stmt = $db->prepare("UPDATE products SET product = :product, price = :price, category_id = :category_id, image = :image WHERE product_id = :product_id ");
+                
+                $binds = array(
+                    ":product_id" => $product_id,
+                    ":product" => $product,
+                    ":price" => $price,
+                    ":category_id" => $category_id,
+                    ":image" => $image
+                );
+                
+                if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
+                   $result = true;
+                }
+    return $result;
+}
+
+function viewOneFromProducts($product_id)
+{
+    $db = dbconnect();
+    
+    $stmt = $db->prepare("SELECT * FROM products where product_id = :product_id");
+    
+    $binds = array(
+            ":product_id" => $product_id
+    );
+    
+      $results = array();
+        if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
+            $results = $stmt->fetch(PDO::FETCH_ASSOC);
+        }
+        
+    return $results;
+}
