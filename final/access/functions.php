@@ -109,10 +109,11 @@ function updateCategoriesRow($category_id, $category)
    
    $db = dbconnect(); 
    
-   $stmt = $db->prepare("UPDATE categories SET category = :category");
+   $stmt = $db->prepare("UPDATE categories SET category = :category WHERE category_id = :category_id ");
                 
                 $binds = array(
-                    ":category" => $category,
+                    ":category_id" => $category_id,
+                    ":category" => $category
                 );
                 
                 if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
