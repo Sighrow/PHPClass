@@ -39,9 +39,20 @@
                 $items = getItemsByCategory($catID);
             }
             
-            include './templates/categories.html.php';
-            include './templates/cart-count.html.php';
-            include './templates/clear-cart.html.php';
+        ?>
+        
+        <div style="padding: 10px; background-color: #F9F9F9; float: left; width: 100%; border-bottom: 1px solid #DDDDDD;">
+            <div style="float: left;"><?php include './templates/categories.html.php'; ?></div>
+            <div style="float: next;"><?php include './templates/cart-count.html.php'; ?></div>
+            <div style="float: right;"><?php include './templates/clear-cart.html.php'; ?></div>
+        </div>
+        
+        <?php
+            
+            
+            
+            
+            
             include './templates/catalog.html.php';
         ?>
         
