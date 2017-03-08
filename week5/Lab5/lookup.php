@@ -77,7 +77,7 @@ and open the template in the editor.
                 <tbody>
                 <?php foreach ($results as $row): ?>
                     <tr>
-                        <td style="padding: 2px"><?php echo $row['link']; ?></td> 
+                        <td style="padding: 2px"><a href="<?php echo $row['link']; ?>" target="popup"><?php echo $row['link']; ?></a></td> 
                     </tr>
                 <?php endforeach; ?>
                 </tbody>
