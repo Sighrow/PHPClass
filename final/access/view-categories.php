@@ -12,7 +12,7 @@
                     <th style='padding-left: 15px; width: 30%;'>Category ID</th>
                     <th>Name</th>
                     <th></th>
-                    <th style='width: 50%px;'></th>
+                    <th></th>
                 </tr>
             </thead>
 
