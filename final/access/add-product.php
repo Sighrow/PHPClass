@@ -39,6 +39,11 @@
         
         $image = $fileName;
         
+        if (!$image)
+        {
+            $image='6fb0013ff4ba866ebbfe615579d27aa7dfbf8afa.png';
+        }
+        
         $confirm = createProductData($product, $price, $image);
         
         if ($confirm === true)
@@ -59,12 +64,12 @@
         <form enctype="multipart/form-data" style='padding-left: 30px' method="post" action="#">
             <b>New Product:</b>
             <br><br>
-            Product Name:<br><input type="text" value="" name="product" />
+            Name:<br><input type="text" value="" name="product" />
             <br><br>
             Price:<br><input type="text" value="" name="price" />
             <br><br>
-            <?php include './uploading/upload-form.php' ?>
-            <input class="btn btn-default btn-sm" type="submit" value="Create" /> <a class="btn btn-default btn-sm" href="./admin.php?action=Products#">Cancel</a> <b><?php echo $results ?></b>
+            Image:<div style="margin-left: -11px;"><?php include './uploading/upload-form.php' ?></div><br><br>
+            <input class="btn btn-default btn-sm" type="submit" style="width: 73px;" value="Create" /> <a style="width: 73px;" class="btn btn-default btn-sm" href="./admin.php?action=Products#">Cancel</a> <b><?php echo $results ?></b>
         </form>
         </div>
     </body>

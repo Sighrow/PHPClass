@@ -12,8 +12,7 @@
             <!-- MAX_FILE_SIZE must precede the file input field -->
             <!-- <input type="hidden" name="MAX_FILE_SIZE" value="30000" /> -->
             <!-- Name of input element determines name in $_FILES array -->
-            Send this file: <input name="image" type="file" />
-            
+            <input class="btn btn-link btn-sm" name="image" type="file" />            
             <input type="hidden" name="oldimage" value="" />
            
 

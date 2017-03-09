@@ -29,7 +29,7 @@
             }
         else
             {
-                $results = 'Category not added.';
+                $results = '<b>Category not added!</b>';
             }
         }
         ?>

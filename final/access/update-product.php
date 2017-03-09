@@ -51,14 +51,17 @@
         <form style='padding-left: 30px' method="post" action="#">
             <b>Update Product:</b>
             <br><br>
-            <input type="text" value="<?php echo $product ?>" name="product" />
-            <br>
-            <input type="text" value="<?php echo $price ?>" name="price" />
-            <input type="hidden" value="<?php echo $product_id; ?>" name="product_id" /> 
-            <input class="btn btn-default btn-sm" type="submit" value="Update" /> <a class="btn btn-default btn-sm" href="./admin.php?action=Products#">Cancel</a> <b><?php echo $result ?></b>
+            Name:<br><input type="text" value="<?php echo $product ?>" name="product" />
+            <br><br>
+            Price:<br><input type="text" value="<?php echo $price ?>" name="price" />
+            <br><br>
+            Image:<div style="margin-left: -11px;"><?php include './uploading/upload-form.php' ?></div><br><br>
+            <input type="hidden" value="<?php echo $product_id; ?>" name="product_id" />
+            <input class="btn btn-default btn-sm" type="submit" style="width: 73px;" value="Update" /> <a style="width: 73px;" class="btn btn-default btn-sm" href="./admin.php?action=Products#">Cancel</a> <b><?php echo $result ?></b>
         </form>
             
         </div>
         
     </body>
 </html>
+            
