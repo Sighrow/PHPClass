@@ -23,7 +23,17 @@
             
             include './uploading/upload-function.php';
             
-            if (count($_FILES)){
+            $ID = filter_input(INPUT_GET, 'product_id');
+            $row = viewOneFromProducts($ID);
+            $oldimage = $row['image'];
+            
+            if (isPostRequest()) {
+                
+                $product_id = filter_input(INPUT_POST, 'product_id');
+                $product = filter_input(INPUT_POST, 'product');
+                $price = filter_input(INPUT_POST, 'price');
+                
+                if (count($_FILES)){
                 
                 try{ 
                     $fileName = uploadImage('image');       
@@ -31,15 +41,13 @@
                 } catch (RuntimeException $e) {
                     $fileName = filter_input(INPUT_POST, 'oldimage');//upload only
                 }
-                echo '<p>Image ' . $fileName . ' Uploaded</p>';
             }
+              
+            $image = $fileName;
             
-            if (isPostRequest()) {
-                $product_id = filter_input(INPUT_POST, 'product_id');
-                $product = filter_input(INPUT_POST, 'product');
-                $price = filter_input(INPUT_POST, 'price');
-                
-                
+            if ($image == NULL){
+                $image = $oldimage;
+            }
                 $updated = updateProductsRow($product_id, $product, $price, $image);
                 if ($updated){
                     $result = 'Product updated.';
@@ -58,7 +66,6 @@
                 $row = viewOneFromProducts($product_id);
                 $product = $row['product'];
                 $price = $row['price'];
-                $oldimage = $row['image'];
             }
         
         ?>
@@ -78,7 +85,6 @@
             <input type="hidden" value="<?php echo $product_id; ?>" name="product_id" />
             <input class="btn btn-default btn-sm" type="submit" style="width: 73px;" value="Update" /> <a style="width: 73px;" class="btn btn-default btn-sm" href="./admin.php?action=Products#">Cancel</a> <b><?php echo $result ?></b>
         </form>
-            <?php echo $oldimage ?>
         </div>
         
     </body>
