@@ -93,7 +93,7 @@ function addToCart($id) {
     $items = getItems();
 
     foreach ($items as $product) {
-      if ( $product['id'] == $id ) {
+      if ( $product['product_id'] == $id ) {
         $_SESSION['cart'][] = $product;
         break;
       }

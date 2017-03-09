@@ -21,7 +21,7 @@
         <?php foreach ($cart as $item): ?>
           <tr>
             <td>
-                <?php echo htmlspecialchars($item['desc'], ENT_QUOTES, 'UTF-8'); ?>
+                <?php echo htmlspecialchars($item['product'], ENT_QUOTES, 'UTF-8'); ?>
             </td>
             <td>
               $<?php echo number_format($item['price'], 2); ?>

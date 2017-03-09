@@ -16,7 +16,7 @@
           <td>
             <form action="" method="post">
               <div>
-                <input type="hidden" name="product_id" value="<?php echo $item['product_id']; ?>">
+                <input type="hidden" name="id" value="<?php echo $item['product_id']; ?>">
                 <input type="submit" name="action" value="Buy">
               </div>
             </form>
