@@ -20,6 +20,7 @@
             $db = dbconnect();
             
             $result = '';
+            
             if (isPostRequest()) {
                 $product_id = filter_input(INPUT_POST, 'product_id');
                 $product = filter_input(INPUT_POST, 'product');
@@ -58,7 +59,7 @@
             Price:<br><input type="text" value="<?php echo $price ?>" name="price" />
             <br><br>
             Image:<div style="margin-left: -11px;">
-            <input class="btn btn-link btn-sm" name="image" value="<?php echo $image?>" type="file" />            
+            <input class="btn btn-link btn-sm" name="image" value="" type="file" />            
        
             </div><br><br>
             <input type="hidden" value="<?php echo $product_id; ?>" name="product_id" />
