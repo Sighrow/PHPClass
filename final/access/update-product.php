@@ -21,6 +21,19 @@
             
             $result = '';
             
+            include './uploading/upload-function.php';
+            
+            if (count($_FILES)){
+                
+                try{ 
+                    $fileName = uploadImage('image');       
+                    
+                } catch (RuntimeException $e) {
+                    $fileName = filter_input(INPUT_POST, 'oldimage');//upload only
+                }
+                echo '<p>Image ' . $fileName . ' Uploaded</p>';
+            }
+            
             if (isPostRequest()) {
                 $product_id = filter_input(INPUT_POST, 'product_id');
                 $product = filter_input(INPUT_POST, 'product');
@@ -59,7 +72,7 @@
             Price:<br><input type="text" value="<?php echo $price ?>" name="price" />
             <br><br>
             Image:<div style="margin-left: -11px;">
-            <input class="btn btn-link btn-sm" name="image" value="" type="file" />            
+            <input class="btn btn-link btn-sm" name="image" type="file" />            
        
             </div><br><br>
             <input type="hidden" value="<?php echo $product_id; ?>" name="product_id" />
