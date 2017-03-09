@@ -33,54 +33,38 @@ function isLoggedIn() {
 }
 
 function getItems() {
-    return array(
-        array(  'id' => '1',
-                'category' => '1',
-                'desc' => 'Dictionary',
-                'price' => 24.95
-            ),
-        array(  'id' => '2',
-                'category' => '2',        
-                'desc' => 'parachute',
-                'price' => 1000
-            ),
-        array(  'id' => '3',
-                'category' => '3', 
-                'desc' => 'Songs of the Goldfish (2CD set)',
-                'price' => 19.99
-            ),
-        array(  'id' => '4',
-                'category' => '1', 
-                'desc' => 'JavaScript',
-                'price' => 39.95
-            ),
-        array(  'id' => '5',
-                'category' => '2', 
-                'desc' => 'BaseBall',
-                'price' => 9.95
-            )
-    );
+    
+    $db = dbconnect();
+    
+    $stmt = $db->prepare("SELECT * FROM products");
+    
+      $results = array();
+        if ($stmt->execute() && $stmt->rowCount() > 0) {
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+        
+    return $results;
 }
 
 function getCategories() {
-    return array(
-        array(  'category_id' => '1',
-                'category' => 'books'
-            ),
-        array(  'category_id' => '2',
-                'category' => 'Sports'
-            ),
-        array(  'category_id' => '3',
-                'category' => 'music'
-            )
-    );
+    
+    $db = dbconnect();
+    
+    $stmt = $db->prepare("SELECT * FROM categories");
+    
+      $results = array();
+        if ($stmt->execute() && $stmt->rowCount() > 0) {
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+        
+    return $results;
 }
 
 function getItemsByCategory($id) {
     $items = getItems();
     $cart = [];
     foreach ($items as $product) {
-      if ( $product['category'] == $id ) {
+      if ( $product['category_id'] == $id ) {
         $cart[] = $product;        
       }
     }    
