@@ -41,10 +41,7 @@ and open the template in the editor.
                         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     } else {
                         $error = 'No Results found';
-                    }
-                    
-                    
-                    
+                    } 
                 }
                 
         ?>
