@@ -25,7 +25,8 @@
                 $product = filter_input(INPUT_POST, 'product');
                 $price = filter_input(INPUT_POST, 'price');
                 
-                $updated = updateProductsRow($product_id, $product, $price);
+                
+                $updated = updateProductsRow($product_id, $product, $price, $image);
                 if ($updated){
                     $result = 'Product updated.';
                     header('location: ./admin.php?action=Products#');
@@ -43,23 +44,27 @@
                 $row = viewOneFromProducts($product_id);
                 $product = $row['product'];
                 $price = $row['price'];
+                $oldimage = $row['image'];
             }
         
         ?>
    
         <div style='margin-top: 20px; float: left;'>    
-        <form style='padding-left: 30px' method="post" action="#">
+        <form enctype="multipart/form-data" style='padding-left: 30px' method="post" action="#">
             <b>Update Product:</b>
             <br><br>
             Name:<br><input type="text" value="<?php echo $product ?>" name="product" />
             <br><br>
             Price:<br><input type="text" value="<?php echo $price ?>" name="price" />
             <br><br>
-            Image:<div style="margin-left: -11px;"><?php include './uploading/upload-form.php' ?></div><br><br>
+            Image:<div style="margin-left: -11px;">
+            <input class="btn btn-link btn-sm" name="image" value="<?php echo $image?>" type="file" />            
+       
+            </div><br><br>
             <input type="hidden" value="<?php echo $product_id; ?>" name="product_id" />
             <input class="btn btn-default btn-sm" type="submit" style="width: 73px;" value="Update" /> <a style="width: 73px;" class="btn btn-default btn-sm" href="./admin.php?action=Products#">Cancel</a> <b><?php echo $result ?></b>
         </form>
-            
+            <?php echo $oldimage ?>
         </div>
         
     </body>

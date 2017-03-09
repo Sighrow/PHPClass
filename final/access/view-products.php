@@ -1,9 +1,8 @@
-<?php $resultsProducts = viewProducts();
+<?php $resultsProducts = viewProducts();?>
 
-if(is_array($resultsProducts) && is_array($resultsProducts) && count($resultsProducts) > 0){ ?>
 <hr>
-<div style="width: 100%; float: left; margin-top: 15px;"><div style="float: left;"><p style='padding-left: 15px'>Showing: <b><?php echo count ($resultsProducts);?> results</b></p></div><div style="float: right; margin-right: 15px;"><a class="btn btn-default btn-sm" style="height: 28px; margin-top: -1px;" href="add-product.php">Add</a></div></div> <?php }
-?>
+<div style="width: 100%; float: left; margin-top: 15px;"><div style="float: left;"><p style='padding-left: 15px'>Showing: <b><?php echo count ($resultsProducts);?> results</b></p></div><div style="float: right; margin-right: 15px;"><a class="btn btn-default btn-sm" style="height: 28px; margin-top: -1px;" href="add-product.php">Add</a></div></div>
+
 <table class="table table-striped">
             <thead>
                 <tr>

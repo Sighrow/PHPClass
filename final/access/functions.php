@@ -182,10 +182,9 @@ function deleteFromProducts($product_id)
     return $isDeleted;
 }
 
-function updateProductsRow($product_id, $product, $price)
+function updateProductsRow($product_id, $product, $price, $image)
 {
    $result = false;
-   $image = 'image.png';
    $category_id = 1;
     
    $db = dbconnect(); 
