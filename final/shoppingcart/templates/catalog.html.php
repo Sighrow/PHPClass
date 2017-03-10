@@ -22,7 +22,7 @@
             <form action="" method="post">
               <div>
                 <input type="hidden" name="id" value="<?php echo $item['product_id']; ?>">
-                <input type="submit" name="action" value="Buy">
+                <input class="btn btn-default btn-sm" type="submit" name="action" value="Buy">
               </div>
             </form>
           </td>

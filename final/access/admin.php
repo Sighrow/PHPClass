@@ -13,6 +13,20 @@
         include_once './functions.php';
         
         $action = filter_input(INPUT_GET, 'action');
+        $button1 = "btn btn-default btn-xs";
+        $button2 = "btn btn-default btn-xs";
+        
+       if ($action === "Categories")
+       {
+           $button1 = "btn btn-primary btn-xs";
+           $button2 = "btn btn-default btn-xs";
+       }
+       if ($action === "Products")
+       {
+           $button1 = "btn btn-default btn-xs";
+           $button2 = "btn btn-primary btn-xs";
+       }
+            
 
         if (!isLoggedIn()) {
             die(header('location: http://localhost/PHPClass/final/users/login.php'));
@@ -23,8 +37,8 @@
 
         <div style="padding: 10px; background-color: #F9F9F9; float: left; width: 100%; border-bottom: 1px solid #DDDDDD;">
         <form action="#" method="get">
-            <input style="width: 100px; margin-left: 5px;" class="btn btn-default btn-xs" type="submit" name="action" value="Categories">
-            <input style="width: 100px;" class="btn btn-default btn-xs" type="submit" name="action" value="Products">
+            <input style="width: 100px; margin-left: 5px; width: 101px;" class="<?php echo $button1 ?>" type="submit" name="action" value="Categories">
+            <input style="width: 100px; width: 101px;" class="<?php echo $button2 ?>" type="submit" name="action" value="Products">
         </form>
         </div>
         
