@@ -36,7 +36,7 @@
 
         <form style='padding-left: 30px' method="post" action="#">
             <?php echo $results?> <input type="text" value="" name="category" />
-            <input class="btn btn-default btn-sm" style="height: 28px; margin-top: -3px;" type="submit" value="Add" />
+            <input class="btn btn-default btn-sm" style="width: 78px; height: 28px; margin-top: -3px;" type="submit" value="Add" />
         </form>
     </body>
 </html>

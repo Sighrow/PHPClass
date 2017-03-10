@@ -19,8 +19,7 @@ and open the template in the editor.
         <div style="float: left;"><img src="../access/images/cartbanner.png" alt="Cart"></img></div><div style="margin-top: -20px; width: 100%; height:100px; background-color: #362e5f; color: white;"><h1 style="padding-top: 30px; padding-left: 30px;">Shopping Cart</h1></div>
         
         <div style="padding: 15px; border-bottom: 3px solid #362e5f; background-color: #ededed; float: left; width: 100%;">
-            <a class="btn btn-default btn-sm" href="../access/admin.php">Admin Panel</a>
-            <a class="btn btn-default btn-sm" href="index.php">Shopping Cart</a>
+            <a class="btn btn-default btn-sm" style="width: 101px;" href="../access/admin.php">Admin Panel</a>
             
             <?php  
 
@@ -35,7 +34,7 @@ and open the template in the editor.
                 
                echo '<div style="text-align: right; float: right;">'
                   . 'Hello, <b>'?><?php echo $_SESSION['username'];?><?php echo '!</b>'
-                  . '<a class="btn btn-default btn-sm" style="margin-left: 10px;" href="?logout=1">Logout</a>'
+                  . '<a class="btn btn-default btn-sm" style="margin-left: 10px; width: 78px" href="?logout=1">Logout</a>'
                   . '</div>';
             } ?>
 
