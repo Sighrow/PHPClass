@@ -1,15 +1,14 @@
 <?php
 
-function signUp($username, $email, $password) {
+function signUp($email, $password) {
 
     $db = dbconnect();
 
-    $stmt = $db->prepare("INSERT INTO users SET username = :username, email = :email, password = :password, created = now()");
+    $stmt = $db->prepare("INSERT INTO users SET email = :email, password = :password, created = now()");
 
     $password = sha1($password);
 
     $binds = array(
-        ":username" => $username,
         ":email" => $email,
         ":password" => $password
     );
@@ -59,11 +58,11 @@ function login($email, $password) {
     return $results;
 }
 
-function getUsername($email, $password) {
+function getWelcomeId($email, $password) {
 
     $db = dbconnect();
 
-    $stmt = $db->prepare("SELECT username FROM users WHERE email = :email and password = :password");
+    $stmt = $db->prepare("SELECT email FROM users WHERE email = :email and password = :password");
 
     $password = sha1($password);
 
@@ -72,10 +71,10 @@ function getUsername($email, $password) {
         ":password" => $password
     );
 
-    $username = 0;
+    $welcomeid = 0;
     if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
         $data = $stmt->fetch(PDO::FETCH_ASSOC);
-        $username = $data['username'];
+        $welcomeid = $data['email'];
     }
-    return $username;
+    return $welcomeid;
 }

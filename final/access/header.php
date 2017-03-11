@@ -33,7 +33,7 @@ and open the template in the editor.
                     $_SESSION['loggedin'] === true ) {
                 
                echo '<div style="text-align: right; float: right;">'
-                  . 'Hello, <b>'?><?php echo $_SESSION['username'];?><?php echo '!</b>'
+                  . 'Hello, <b>'?><?php echo $_SESSION['welcomeid'];?><?php echo '!</b>'
                   . '<a class="btn btn-default btn-sm" style="margin-left: 10px; width: 78px;" href="?logout=1">Logout</a>'
                   . '</div>';
             } ?>

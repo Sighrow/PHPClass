@@ -22,11 +22,11 @@ and open the template in the editor.
             $password = filter_input(INPUT_POST, 'pass');
             
             $result = login($email, $password);
-            $username = getUsername($email, $password);
+            $welcomeid = getWelcomeId($email, $password);
             if ($result != 0){
                 $_SESSION['userid'] = $result;
                 $_SESSION['loggedin'] = true;
-                $_SESSION['username'] = $username;
+                $_SESSION['welcomeid'] = $welcomeid;
                 header('location: ../access/admin.php');
             }
         }

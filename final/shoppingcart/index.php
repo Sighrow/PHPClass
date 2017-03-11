@@ -23,7 +23,7 @@
                 addToCart($cartID);
             }
             
-            if ( $action === 'Empty cart' ) {
+            if ( $action === 'Clear Cart' ) {
                 emptyCart();
             }               
             

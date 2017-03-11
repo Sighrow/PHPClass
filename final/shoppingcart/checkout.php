@@ -12,7 +12,7 @@
             /* php processing variables */
             $action = filter_input(INPUT_POST, 'action');                      
             
-            if ( $action === 'Empty cart' ) {
+            if ( $action === 'Clear Cart' ) {
                 emptyCart();
             }
             

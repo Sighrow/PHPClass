@@ -21,7 +21,6 @@ and open the template in the editor.
         if (isPostRequest() ){
             $email = filter_input(INPUT_POST, 'email');
             $password = filter_input(INPUT_POST, 'pass');
-            $username = filter_input(INPUT_POST, 'username');
             
             $userExist = userExist ($email);
             $errors = [];
@@ -33,7 +32,7 @@ and open the template in the editor.
               //To-do: Validation.
             
             if (count($errors) === 0 ){
-                $result = signUp($username, $email, $password);
+                $result = signUp($email, $password);
             
             
                 if ($result === true){
