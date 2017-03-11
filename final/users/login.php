@@ -23,11 +23,11 @@ and open the template in the editor.
             $errors = [];
             $result = login($email, $password);
             $welcomeid = getWelcomeId($email, $password);
-            
+
             if ($email === "" || $password === ""){
                 $errors[] = 'Please fill out all fields.';
             }
-            if (!isset($results)){
+            if ($result === 0){
                 $errors[] = 'Invalid information.';
             }
             

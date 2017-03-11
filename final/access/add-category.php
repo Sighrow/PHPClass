@@ -11,31 +11,40 @@
     </head>
     <body>
         <?php
-        
+        $image = "<img src='./images/erroricon.png' alt='Error' />";
         $results = '';
-
+        $errors = [];
+        
         if (isPostRequest()) 
         {
         
         $category = filter_input(INPUT_POST, 'category');
 
+        if ($category === "")
+        {
+            $errors[] = "Category cannot be blank.";
+        }
         
+        if (count ($errors) === 0){
+            
         $confirm = createCategoryData($category);
         
         if ($confirm === true)
             {
-                $results = 'Category added!';
                 header('location: ./admin.php?action=Categories#');
             }
         else
             {
-                $results = '<b>Category not added!</b>';
+                $errors[] = "Category already exists.";
             }
+        }
+        
+        
         }
         ?>
 
         <form style='padding-left: 30px' method="post" action="#">
-            <?php echo $results?> <input type="text" value="" name="category" />
+            <?php if (count ($errors) > 0 ){echo $image; echo '&nbsp'; echo $errors[0];}?> <input type="text" value="" name="category" />
             <input class="btn btn-default btn-sm" style="width: 78px; height: 28px; margin-top: -3px;" type="submit" value="Add" />
         </form>
     </body>
