@@ -11,7 +11,7 @@
     </head>
     <body>
         <?php
-        $image = "<img src='./images/erroricon.png' alt='Error' />";
+        $errorimage = "<img src='./images/erroricon.png' alt='Error' />";
         $results = '';
         $errors = [];
         
@@ -44,7 +44,7 @@
         ?>
 
         <form style='padding-left: 30px' method="post" action="#">
-            <?php if (count ($errors) > 0 ){echo $image; echo '&nbsp'; echo $errors[0];}?> <input type="text" value="" name="category" />
+            <b><?php if (count ($errors) > 0 ){echo $errorimage; echo '&nbsp'; echo $errors[0];}?></b> <input type="text" value="" name="category" />
             <input class="btn btn-default btn-sm" style="width: 78px; height: 28px; margin-top: -3px;" type="submit" value="Add" />
         </form>
     </body>
