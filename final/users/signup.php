@@ -25,13 +25,29 @@ and open the template in the editor.
             $userExist = userExist ($email);
             $errors = [];
             
+            if ( filter_var($email, FILTER_VALIDATE_EMAIL) === false ) {
+                $isValid = false;
+                $errors[] = "Email invalid.";
+            }
+            
+            if ( !isset($isValid)){
+                $isValid = true;
+            }
+            
+            if ($email === "" || $password === ""){
+                $errors[] = 'Please fill out all fields.';
+            }
+            
+            if (strlen($password) < 5){
+                $errors[] = 'Password must be longer than 5 characters.';
+            }
+            
             if ($userExist){
                 $errors[] = 'Email already exists.';
             }
+           
             
-              //To-do: Validation.
-            
-            if (count($errors) === 0 ){
+            if (count($errors) === 0 && $isValid === true ){
                 $result = signUp($email, $password);
             
             
@@ -39,7 +55,7 @@ and open the template in the editor.
                     header('Location: login.php');
                 }
                 else{
-                    //To-do: Show Error Message.
+                    $errors[] = 'Invalid.';
                 }
             }
         }
