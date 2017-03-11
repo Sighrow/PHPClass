@@ -56,6 +56,6 @@
             include './templates/catalog.html.php';
         ?>
         
-        <p><a href="checkout.php">CheckOut</a></p>
+        <p><a class="btn btn-default btn-sm" href="checkout.php">CheckOut</a></p>
     </body>
 </html>

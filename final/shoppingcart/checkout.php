@@ -6,8 +6,9 @@
     </head>
     <body>
         <?php
-            include './functions/cart.php';
             session_start();
+            include './functions/cart.php';
+            include './header.php';
             
             /* php processing variables */
             $action = filter_input(INPUT_POST, 'action');                      
@@ -25,6 +26,6 @@
             include './templates/clear-cart.html.php';
         ?>
         
-        <p><a href="index.php">Continue Shopping</a></p>
+        <p><a class="btn btn-default btn-sm" href="index.php">Continue Shopping</a></p>
     </body>
 </html>
