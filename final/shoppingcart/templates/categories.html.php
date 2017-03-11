@@ -11,10 +11,8 @@
 </ul>
 <?php endif; ?>
 
-        <form style="padding-left: 30px;" method="post" action="#">
-        <label>Look-up:</label><br>
-        
-            <select style="width: 400px; height: 26px;" name="category">
+        <form style="padding-left: 28px;" method="post" action="#">      
+        <b>Show:</b> <select style="width: 400px; height: 26px;" name="category">
             <?php foreach ($allCategories as $category): ?>
                 <option 
                     value="<?php echo $allCategories['category']; ?>"

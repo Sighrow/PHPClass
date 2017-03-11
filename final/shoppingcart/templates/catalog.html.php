@@ -1,5 +1,4 @@
 <div style="padding: 50px;">
-    <br><br>
     <h1>Catalog</h1>
 <table class="table table-bordered" style="width: 100%" border="1">
     <thead>

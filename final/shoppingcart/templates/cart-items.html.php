@@ -1,4 +1,4 @@
-<h1>Your Shopping Cart</h1>
+<h2 style="padding: 13px;">Your Shopping Cart</h2>
 <?php if ( count($cart) > 0): ?>
     <table border="1">
       <thead>
@@ -35,5 +35,5 @@
       </tbody>
     </table>
 <?php else: ?>
-    <p>Your cart is empty!</p>
+<p style="padding-left: 15px;">Your cart is empty!</p>
 <?php endif; ?>
