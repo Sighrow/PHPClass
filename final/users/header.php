@@ -23,11 +23,11 @@ and open the template in the editor.
         
         <div style="padding: 15px; border-bottom: 3px solid #362e5f; background-color: #ededed;">
            
-            <?php if ($_SERVER['REQUEST_URI'] === "/PHPClass/final/users/login.php"){?>
+            <?php if ( strpos($_SERVER['REQUEST_URI'], 'login.php') != false){?>
             <a class="btn btn-default btn-sm" href="signup.php">Sign up</a>
             <?php } ?>
             
-            <?php if ($_SERVER['REQUEST_URI'] === "/PHPClass/final/users/signup.php"){?>
+            <?php if ( strpos($_SERVER['REQUEST_URI'], 'signup.php') != false){?>
             <a class="btn btn-default btn-sm" href="login.php">Log in</a>
             <?php } ?>
             

@@ -1,5 +1,5 @@
         <form style="padding-left: 15px;" method="POST" action="#">
-            <?php if ($_SERVER['REQUEST_URI'] === "/PHPClass/final/users/signup.php") {?>
+            <?php if (strpos($_SERVER['REQUEST_URI'], 'signup.php') != false) {?>
             Username:<br><input type="text" name="username" value="" />
             <br><br>
             <?php }?>
