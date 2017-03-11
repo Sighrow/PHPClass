@@ -56,6 +56,6 @@
             include './templates/catalog.html.php';
         ?>
         
-        <p><a class="btn btn-default btn-sm" href="checkout.php">CheckOut</a></p>
+        <p style="margin-top: -50px; float: right; margin-right: 15px;"><a style="width: 78px;" class="btn btn-default btn-sm" href="checkout.php">Check Out</a></p>
     </body>
 </html>
