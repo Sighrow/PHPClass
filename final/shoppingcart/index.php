@@ -17,7 +17,11 @@
             /* php processing variables */
             $action = filter_input(INPUT_POST, 'action');
             $cartID = filter_input(INPUT_POST, 'id');
-            $catID = filter_input(INPUT_GET, 'cat');
+            $catID = filter_input(INPUT_POST, 'categoryselected');
+            
+            if ($catID === ""){
+                $catID = NULL;
+            }
             
             if ( $action === 'Buy' ) {
                 addToCart($cartID);

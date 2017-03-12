@@ -1,29 +1,20 @@
-<?php if ( isset($allCategories) ) : ?>
-<ul> 
-    <li><a href="?">All</a> </li>    
-    <?php foreach ($allCategories as $category): ?>
-        <li>
-            <a href="?cat=<?php echo $category['category_id']; ?>">
-                <?php echo $category['category']; ?>
-            </a>
-        </li>    
-    <?php endforeach; ?> 
-</ul>
-<?php endif; ?>
+<form style="padding-left: 28px;" method="post" action="#">      
+    <b>Show:</b> <select style="width: 400px; height: 26px;" name="categoryselected">
 
-        <form style="padding-left: 28px;" method="post" action="#">      
-        <b>Show:</b> <select style="width: 400px; height: 26px;" name="category">
-            <?php foreach ($allCategories as $category): ?>
-                <option 
-                    value="<?php echo $allCategories['category']; ?>"
-                    <?php if( intval($category) === $category['category']) : ?>
-                    <?php $_SERVER['REQUEST_URI'] = $_SERVER['REQUEST_URI'] + '?cat=' ?><?php echo $category['category_id']?>
+        <option value="">All</option>
+
+        <?php foreach ($allCategories as $category): ?>
+            <option value="<?php echo $category['category_id']; ?>"
+            <?php if (intval($catID) === $category['category_id']) : ?>
+                        selected="selected"
                     <?php endif; ?>
-                >
-                    <?php echo $category['category']; ?>
-                </option>
-            <?php endforeach; ?>
-            </select>
+                    >
+                        <?php echo $category['category']; ?>
+            </option>
+        <?php endforeach; ?>
 
-            <input style="width: 75px; height: 26px; margin-top: -3px;" class="btn btn-default btn-xs" type="submit" value="Results" />
-        </form>
+
+    </select>
+
+    <input style="width: 75px; height: 26px; margin-top: -3px;" class="btn btn-default btn-xs" type="submit" value="Results" />
+</form>
