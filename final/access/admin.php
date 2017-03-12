@@ -54,11 +54,12 @@
             }
          if( !$action )
          {
-             ?><div style="float: left; width: 100%;"><h2 style="padding: 13px;">Please select which data to edit. </h2><hr></div><?php
+             ?><div style="float: left; width: 100%;"><h2 style="padding: 13px;">Please select which data to edit. </h2><hr></div>
+                 <?php
          }
             
         ?>
 
-
+<div style="position:fixed;bottom:0;height:auto;margin-top:60px;background-color: #ededed; border-top: 5px solid #DDDDDD; border-bottom: 8px solid #362e5f; width: 100%; float: left;"></div>
     </body>
 </html>

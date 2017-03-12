@@ -74,6 +74,6 @@
         </form>
             
         </div>
-        
+        <div style="position:fixed;bottom:0;height:auto;margin-top:60px;background-color: #ededed; border-top: 5px solid #DDDDDD; border-bottom: 8px solid #362e5f; width: 100%; float: left;"></div>
     </body>
 </html>

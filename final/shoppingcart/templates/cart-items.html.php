@@ -1,6 +1,6 @@
 <h2 style="padding: 13px;">Your Shopping Cart</h2>
 <?php if ( count($cart) > 0): ?>
-    <table border="1">
+    <table class="table table-bordered" style="width: 40%; margin-left: 15px; margin-bottom: 15px;" border="1">
       <thead>
         <tr>
           <th>Item Description</th>

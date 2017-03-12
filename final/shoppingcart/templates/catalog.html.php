@@ -1,6 +1,6 @@
-<div style="padding: 50px;">
-    <h1>Catalog</h1>
-<table class="table table-bordered" style="width: 100%" border="1">
+<div style="padding: 15px; margin-bottom: 35px;">
+    <h2 style="margin-bottom: 20px;">Shop</h2>
+<table class="table table-bordered" style="width: 100%;" border="1">
     <thead>
       <tr>
           <th>Preview</th>

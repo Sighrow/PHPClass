@@ -72,5 +72,7 @@
             <input class="btn btn-default btn-sm" type="submit" style="width: 73px;" value="Create" /> <a style="width: 73px;" class="btn btn-default btn-sm" href="./admin.php?action=Products#">Cancel</a> <b><?php echo $results ?></b>
         </form>
         </div>
+        
+        <div style="position:fixed;bottom:0;height:auto;margin-top:60px;background-color: #ededed; border-top: 5px solid #DDDDDD; border-bottom: 8px solid #362e5f; width: 100%; float: left;"></div>
     </body>
 </html>
