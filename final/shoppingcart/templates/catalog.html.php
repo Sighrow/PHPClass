@@ -4,8 +4,8 @@
     <thead>
       <tr>
           <th>Preview</th>
-        <th>Item Description</th>
-        <th>Price</th>
+        <th>Product Name</th>
+        <th style="width: 25%">Price</th>
         <th></th>
       </tr>
     </thead>
@@ -14,7 +14,7 @@
         <tr>
             <td><img style="width: 100px; height: 100px;" src="../access/uploads/<?php echo $item['image']; ?>"></img></td>
           <td><?php echo htmlspecialchars($item['product'], ENT_QUOTES, 'UTF-8'); ?></td>
-          <td>
+          <td style="width: 25%">
             $<?php echo number_format($item['price'], 2); ?>
           </td>
           <td>

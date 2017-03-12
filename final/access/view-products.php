@@ -8,7 +8,7 @@
                 <tr>
                     <th style='padding-left: 15px'>Image</th>
                     <th></th>
-                    <th>Category</th>
+                    <th>Category ID</th>
                     <th>Product ID</th>
                     <th>Name</th>
                     <th>Price</th>
