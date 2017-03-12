@@ -3,7 +3,7 @@
     <table class="table table-bordered" style="width: 40%; margin-left: 15px; margin-bottom: 20px;" border="1">
       <thead>
         <tr>
-          <th>Item Description</th>
+          <th>Product Name</th>
           <th>Price</th>
         </tr>
       </thead>
