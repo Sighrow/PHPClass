@@ -1,5 +1,5 @@
 <form style="padding-left: 28px;" method="post" action="#">      
-    <b>Show:</b> <select style="width: 400px; height: 26px;" name="categoryselected">
+    <b>Show:</b> <select style="width: 270px; height: 26px;" name="categoryselected">
 
         <option value="">All</option>
 
