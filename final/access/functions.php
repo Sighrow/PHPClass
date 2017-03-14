@@ -140,10 +140,9 @@ function viewOneFromCategories($category_id)
     return $results;
 }
 
-function createProductData($product, $price, $image)
+function createProductData($category_id, $product, $price, $image)
 {
     $result = false;
-    $category_id = 1;
     
     $db = dbconnect();
     
@@ -182,10 +181,9 @@ function deleteFromProducts($product_id)
     return $isDeleted;
 }
 
-function updateProductsRow($product_id, $product, $price, $image)
+function updateProductsRow($product_id, $category_id, $product, $price, $image)
 {
    $result = false;
-   $category_id = 1;
     
    $db = dbconnect(); 
    
@@ -218,6 +216,20 @@ function viewOneFromProducts($product_id)
       $results = array();
         if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
             $results = $stmt->fetch(PDO::FETCH_ASSOC);
+        }
+        
+    return $results;
+}
+
+function getCategories() {
+    
+    $db = dbconnect();
+    
+    $stmt = $db->prepare("SELECT * FROM categories");
+    
+      $results = array();
+        if ($stmt->execute() && $stmt->rowCount() > 0) {
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
         
     return $results;

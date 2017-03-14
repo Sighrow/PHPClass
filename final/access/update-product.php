@@ -26,12 +26,14 @@
             $ID = filter_input(INPUT_GET, 'product_id');
             $row = viewOneFromProducts($ID);
             $oldimage = $row['image'];
+            $allCategories = getCategories();
             
             if (isPostRequest()) {
                 
                 $product_id = filter_input(INPUT_POST, 'product_id');
                 $product = filter_input(INPUT_POST, 'product');
                 $price = filter_input(INPUT_POST, 'price');
+                $category_id = filter_input(INPUT_POST, 'categoryselected');
                 
                 if (count($_FILES)){
                 
@@ -48,7 +50,7 @@
             if ($image == NULL){
                 $image = $oldimage;
             }
-                $updated = updateProductsRow($product_id, $product, $price, $image);
+                $updated = updateProductsRow($product_id, $category_id, $product, $price, $image);
                 if ($updated){
                     $result = 'Product updated.';
                     header('location: ./admin.php?action=Products#');
@@ -66,13 +68,23 @@
                 $row = viewOneFromProducts($product_id);
                 $product = $row['product'];
                 $price = $row['price'];
+                $category_id = $row['category_id'];
             }
         
         ?>
    
         <div style='margin-top: 20px; float: left;'>    
         <form enctype="multipart/form-data" style='padding-left: 30px' method="post" action="#">
-            <b>Update Product:</b>
+            <b>Update Product:</b><br><br>
+            Category:<br><select style="width: 270px; height: 26px;" name="categoryselected">
+                <?php foreach ($allCategories as $category): ?>
+                    <option value="<?php echo $category['category_id']; ?>"
+                    <?php if (intval($category_id) === $category['category_id']) : ?>
+                                selected="selected" <?php endif; ?>>
+                                <?php echo $category['category']; ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
             <br><br>
             Name:<br><input type="text" value="<?php echo $product ?>" name="product" />
             <br><br>

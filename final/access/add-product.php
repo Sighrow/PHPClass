@@ -18,8 +18,9 @@
 
         $product = filter_input(INPUT_POST, 'product');
         $price = filter_input(INPUT_POST, 'price');
+        $category_id = filter_input(INPUT_POST, 'categoryselected');
         
-        
+        $allCategories = getCategories();
         
          include './uploading/upload-function.php';
             
@@ -44,7 +45,7 @@
             $image='6fb0013ff4ba866ebbfe615579d27aa7dfbf8afa.png';
         }
         
-        $confirm = createProductData($product, $price, $image);
+        $confirm = createProductData($category_id, $product, $price, $image);
         
         if ($confirm === true)
             {
@@ -62,7 +63,16 @@
 
         <div style='margin-top: 20px; float: left;'>    
         <form enctype="multipart/form-data" style='padding-left: 30px' method="post" action="#">
-            <b>New Product:</b>
+            <b>New Product:</b><br><br>
+            Category:<br><select style="width: 270px; height: 26px;" name="categoryselected">
+                <?php foreach ($allCategories as $category): ?>
+                    <option value="<?php echo $category['category_id']; ?>"
+                    <?php if (intval($category_id) === $category['category_id']) : ?>
+                                selected="selected" <?php endif; ?>>
+                                <?php echo $category['category']; ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
             <br><br>
             Name:<br><input type="text" value="" name="product" />
             <br><br>
