@@ -19,6 +19,8 @@
         include './dbconnect.php';
         include './functions.php';
 
+        $added = "";
+        
         if (isPostRequest()) {
 
             $email = filter_input(INPUT_POST, "email");
@@ -53,6 +55,12 @@
                 $results = createAccountData($email, $phone, $heard_from, $contact_via, $comments);
                 $successes[] = $email;
                 $successes[] = $phone;
+
+                $added = true;
+            }
+            
+            if (count($errors) != 0){
+                $added = false;
             }
         }
         ?>    
@@ -120,25 +128,32 @@
             <br />
         </div>
 
-        <div style="float: left; padding-left: 15px;">
-            <div class="list-group-item list-group-item-danger" style="padding: 5px;">
-                <fieldset>
-                    <legend style="margin-bottom: 15px; color: #A94444;">Data not added.</legend>
-                    <label>Error:</label>
-<?php include 'error-messages.html.php'; ?>
-                </fieldset><br>
-            </div>    
-        </div>
+        <?php if ($added === true) { ?>
 
-        <div style="float: left; padding-left: 15px;">
-            <div class="list-group-item list-group-item-success" style="padding: 5px;">
-                <fieldset>
-                    <legend style="margin-bottom: 15px; color: #3C763D;">Data added successfully!</legend>
-                    <label>Added:</label>
-<?php include 'success-messages.html.php'; ?>
-                </fieldset><br>
-            </div>    
-        </div>
+            <div style="float: left; padding-left: 15px;">
+                <div class="list-group-item list-group-item-success" style="padding: 5px;">
+                    <fieldset>
+                        <legend style="margin-bottom: 15px; color: #3C763D;">Data added successfully!</legend>
+                        <label>Added:</label>
+    <?php include 'success-messages.html.php'; ?>
+                    </fieldset><br>
+                </div>    
+            </div>
+<?php }
+
+if ($added === false) {
+    ?>
+
+            <div style="float: left; padding-left: 15px;">
+                <div class="list-group-item list-group-item-danger" style="padding: 5px;">
+                    <fieldset>
+                        <legend style="margin-bottom: 15px; color: #A94444;">Data not added.</legend>
+                        <label>Error:</label>
+                        <?php include 'error-messages.html.php'; ?>
+                    </fieldset><br>
+                </div>    
+            </div> 
+        <?php } ?>
 
 
 

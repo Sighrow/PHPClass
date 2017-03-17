@@ -29,7 +29,7 @@ and open the template in the editor.
 
      <div style="float: left; width: 100%; height: 75px; background-color: black; margin-bottom: 15px;">
          <div style="float: left; height: 50px; padding-left: 15px;">
-             <h2 style="color: white; height: 50px;">Account Sign-Up</h2>
+             <h2 style="color: white; height: 50px;">View Data</h2>
          </div>
          <div style="float: right; padding-right: 15px; margin-top: 25px;">
              <div style="float: left; border-left: 3px solid white; padding-left: 5px; padding-right: 5px;">
