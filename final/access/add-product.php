@@ -15,7 +15,6 @@
         include './header.php';
         include './functions.php';
         $results = '';
-
         $product = filter_input(INPUT_POST, 'product');
         $price = filter_input(INPUT_POST, 'price');
         $category_id = filter_input(INPUT_POST, 'categoryselected');
